@@ -5,41 +5,678 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eatzilla</title>
     <link rel="icon" href="Images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
     <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <div>
+<body class="font-Inter">
+    <header class="lg:pt-[33px] md:pt-7 sm:pt-6 pt-4 lg:px-20 md:px-14 sm:px-10 px-8 sticky top-0 bg-white lg:pb-[60px] md:pb-14 sm:pb-10 pb-8 z-50">
+        <nav class="flex justify-between">
+            <div class="flex order-1">
                 <a href="javascript:void(0)">
                     <img src="Images/header-logo.svg" class="img-fluid" alt="eatzilla" width="" height="" title="eatzilla">
                 </a>
             </div>
-            <div>
-                <form>
-                    <select>
-                        <option>
-                            <img src="Images/location.svg">
-                            <span>Coimbatore</span>
+            <div onclick="menu()" ondblclick="hide()" class="flex justify-end lg:hidden nav-icon order-4 z-50 lg:p-0">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+            <div class="order-2">
+                <form class="flex gap-[15px] flex-col lg:flex-row relative">
+                    <span class="absolute top-1/3 left-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none">
+                        <path d="M7.33478 0.500003H7.33523C8.41188 0.500067 9.46817 0.788272 10.3923 1.3337C11.3163 1.87911 12.0735 2.66126 12.5843 3.59683C13.0951 4.53236 13.3406 5.58678 13.2954 6.64859C13.2501 7.7104 12.9156 8.74072 12.3269 9.6305L12.3079 9.65916L12.2931 9.69014C12.2845 9.70796 12.2737 9.72481 12.2609 9.74026L12.2601 9.74117L12.1575 9.86517L12.1487 9.87582L12.1405 9.88693C12.0077 10.0667 11.8643 10.2385 11.7111 10.4016L11.7005 10.4129L11.6906 10.4249L7.57537 15.3886C7.57533 15.3886 7.57529 15.3886 7.57526 15.3887C7.54672 15.423 7.51053 15.4511 7.46905 15.4704C7.4275 15.4899 7.38187 15.5 7.3355 15.5L7.33429 15.5C7.28805 15.5001 7.24254 15.4901 7.20104 15.4708C7.15977 15.4516 7.1237 15.4239 7.09515 15.39C7.09501 15.3898 7.09487 15.3896 7.09472 15.3895L2.85667 10.2916L2.85677 10.2915L2.84946 10.2831C2.77499 10.1975 2.68771 10.0923 2.60288 9.9836L2.59822 9.97762L2.59337 9.97178L2.49639 9.85498L2.49572 9.85418C2.48155 9.83719 2.46939 9.8188 2.45939 9.79937L2.444 9.76942L2.42472 9.74181C1.8071 8.85701 1.44618 7.82228 1.38052 6.74973C1.31487 5.67719 1.54694 4.60708 2.05196 3.65523C2.55701 2.70333 3.31596 1.90569 4.24718 1.34925C5.17845 0.792786 6.24622 0.49895 7.33478 0.500003ZM8.95816 3.98743C8.47734 3.66943 7.91258 3.5 7.33526 3.5C6.56123 3.5 5.81789 3.80431 5.26902 4.34759C4.71998 4.89104 4.41059 5.62921 4.41059 6.4C4.41059 6.97471 4.58279 7.53609 4.90481 8.01312C5.22678 8.49009 5.68388 8.86107 6.21771 9.07994C6.75149 9.29879 7.33855 9.35597 7.90488 9.24447C8.47124 9.13296 8.99216 8.8576 9.40151 8.45241C9.81091 8.04718 10.0903 7.53025 10.2035 6.96673C10.3168 6.40317 10.2586 5.81908 10.0366 5.28854C9.81462 4.75806 9.43904 4.30548 8.95816 3.98743Z" fill="#6B7280" stroke="#6B7280"/>
+                      </svg>
+                    </span>
+                    <select class="border border-link-water bg-alice-blue rounded-lg text-midnight text-base font-normal leading-[150%] py-3.5 ps-10 pr-24">
+                        <option class="border-0">
+                            Coimbatore
                         </option>
-                        <option>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 14 16" fill="none">
-                                <path d="M7.33478 0.500003H7.33523C8.41188 0.500067 9.46817 0.788272 10.3923 1.3337C11.3163 1.87911 12.0735 2.66126 12.5843 3.59683C13.0951 4.53236 13.3406 5.58678 13.2954 6.64859C13.2501 7.7104 12.9156 8.74072 12.3269 9.6305L12.3079 9.65916L12.2931 9.69014C12.2845 9.70796 12.2737 9.72481 12.2609 9.74026L12.2601 9.74117L12.1575 9.86517L12.1487 9.87582L12.1405 9.88693C12.0077 10.0667 11.8643 10.2385 11.7111 10.4016L11.7005 10.4129L11.6906 10.4249L7.57537 15.3886C7.57533 15.3886 7.57529 15.3886 7.57526 15.3887C7.54672 15.423 7.51053 15.4511 7.46905 15.4704C7.4275 15.4899 7.38187 15.5 7.3355 15.5L7.33429 15.5C7.28805 15.5001 7.24254 15.4901 7.20104 15.4708C7.15977 15.4516 7.1237 15.4239 7.09515 15.39C7.09501 15.3898 7.09487 15.3896 7.09472 15.3895L2.85667 10.2916L2.85677 10.2915L2.84946 10.2831C2.77499 10.1975 2.68771 10.0923 2.60288 9.9836L2.59822 9.97762L2.59337 9.97178L2.49639 9.85498L2.49572 9.85418C2.48155 9.83719 2.46939 9.8188 2.45939 9.79937L2.444 9.76942L2.42472 9.74181C1.8071 8.85701 1.44618 7.82228 1.38052 6.74973C1.31487 5.67719 1.54694 4.60708 2.05196 3.65523C2.55701 2.70333 3.31596 1.90569 4.24718 1.34925C5.17845 0.792786 6.24622 0.49895 7.33478 0.500003ZM8.95816 3.98743C8.47734 3.66943 7.91258 3.5 7.33526 3.5C6.56123 3.5 5.81789 3.80431 5.26902 4.34759C4.71998 4.89104 4.41059 5.62921 4.41059 6.4C4.41059 6.97471 4.58279 7.53609 4.90481 8.01312C5.22678 8.49009 5.68388 8.86107 6.21771 9.07994C6.75149 9.29879 7.33855 9.35597 7.90488 9.24447C8.47124 9.13296 8.99216 8.8576 9.40151 8.45241C9.81091 8.04718 10.0903 7.53025 10.2035 6.96673C10.3168 6.40317 10.2586 5.81908 10.0366 5.28854C9.81462 4.75806 9.43904 4.30548 8.95816 3.98743Z" fill="#6B7280" stroke="#6B7280"/>
-                            </svg>
-                            <span>Coimbatore</span>
+                        <option class="border-0">
+                            Sivagangai
                         </option>
-                        <option>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none">
-                                <path d="M7.33478 0.500003H7.33523C8.41188 0.500067 9.46817 0.788272 10.3923 1.3337C11.3163 1.87911 12.0735 2.66126 12.5843 3.59683C13.0951 4.53236 13.3406 5.58678 13.2954 6.64859C13.2501 7.7104 12.9156 8.74072 12.3269 9.6305L12.3079 9.65916L12.2931 9.69014C12.2845 9.70796 12.2737 9.72481 12.2609 9.74026L12.2601 9.74117L12.1575 9.86517L12.1487 9.87582L12.1405 9.88693C12.0077 10.0667 11.8643 10.2385 11.7111 10.4016L11.7005 10.4129L11.6906 10.4249L7.57537 15.3886C7.57533 15.3886 7.57529 15.3886 7.57526 15.3887C7.54672 15.423 7.51053 15.4511 7.46905 15.4704C7.4275 15.4899 7.38187 15.5 7.3355 15.5L7.33429 15.5C7.28805 15.5001 7.24254 15.4901 7.20104 15.4708C7.15977 15.4516 7.1237 15.4239 7.09515 15.39C7.09501 15.3898 7.09487 15.3896 7.09472 15.3895L2.85667 10.2916L2.85677 10.2915L2.84946 10.2831C2.77499 10.1975 2.68771 10.0923 2.60288 9.9836L2.59822 9.97762L2.59337 9.97178L2.49639 9.85498L2.49572 9.85418C2.48155 9.83719 2.46939 9.8188 2.45939 9.79937L2.444 9.76942L2.42472 9.74181C1.8071 8.85701 1.44618 7.82228 1.38052 6.74973C1.31487 5.67719 1.54694 4.60708 2.05196 3.65523C2.55701 2.70333 3.31596 1.90569 4.24718 1.34925C5.17845 0.792786 6.24622 0.49895 7.33478 0.500003ZM8.95816 3.98743C8.47734 3.66943 7.91258 3.5 7.33526 3.5C6.56123 3.5 5.81789 3.80431 5.26902 4.34759C4.71998 4.89104 4.41059 5.62921 4.41059 6.4C4.41059 6.97471 4.58279 7.53609 4.90481 8.01312C5.22678 8.49009 5.68388 8.86107 6.21771 9.07994C6.75149 9.29879 7.33855 9.35597 7.90488 9.24447C8.47124 9.13296 8.99216 8.8576 9.40151 8.45241C9.81091 8.04718 10.0903 7.53025 10.2035 6.96673C10.3168 6.40317 10.2586 5.81908 10.0366 5.28854C9.81462 4.75806 9.43904 4.30548 8.95816 3.98743Z" fill="#6B7280" stroke="#6B7280"/>
-                            </svg>
-                            <span>Coimbatore</span>
+                        <option class="border-0">
+                            Thirupur
                         </option>
                     </select>
+                    <div class="flex items-center gap-[10px] px-4 py-[14px] rounded-lg border border-link-water bg-alice-blue focus-within:border-dark-cerulean w-52 sm:w-60 md:w-72 lg:w-80 xl:w-[384px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6.10007 12.2C4.99248 12.2 3.90976 11.8716 2.98884 11.2562C2.06791 10.6409 1.35014 9.76629 0.926282 8.74302C0.502426 7.71976 0.391526 6.59379 0.607606 5.50749C0.823686 4.4212 1.35704 3.42338 2.14022 2.6402C2.92341 1.85703 3.92124 1.32368 5.00755 1.1076C6.09386 0.891528 7.21984 1.00243 8.24312 1.42628C9.2664 1.85013 10.141 2.56789 10.7564 3.48881C11.3717 4.40972 11.7001 5.49242 11.7001 6.6C11.6985 8.0847 11.1079 9.50811 10.0581 10.558C9.00822 11.6078 7.58479 12.1983 6.10007 12.2ZM6.10007 2.4C5.26938 2.4 4.45734 2.64633 3.76665 3.10783C3.07595 3.56933 2.53762 4.22528 2.21973 4.99273C1.90184 5.76018 1.81866 6.60466 1.98072 7.41938C2.14278 8.2341 2.5428 8.98247 3.13018 9.56985C3.71757 10.1572 4.46595 10.5572 5.28068 10.7193C6.09541 10.8814 6.9399 10.7982 7.70736 10.4803C8.47482 10.1624 9.13077 9.62408 9.59228 8.93339C10.0538 8.24271 10.3001 7.43068 10.3001 6.6C10.299 5.48643 9.85614 4.41879 9.06872 3.63138C8.2813 2.84397 7.21365 2.40111 6.10007 2.4Z" fill="#6B7280"/>
+                            <path d="M13.8001 15C13.6145 15 13.4365 14.9262 13.3052 14.7949L10.5052 11.9949C10.3777 11.8629 10.3071 11.6861 10.3087 11.5025C10.3103 11.319 10.3839 11.1434 10.5137 11.0136C10.6435 10.8838 10.8191 10.8102 11.0026 10.8086C11.1862 10.807 11.363 10.8776 11.495 11.0051L14.295 13.8051C14.3929 13.903 14.4596 14.0277 14.4866 14.1635C14.5136 14.2992 14.4997 14.44 14.4467 14.5679C14.3938 14.6957 14.3041 14.8051 14.189 14.882C14.0739 14.9589 13.9386 15 13.8001 15Z" fill="#6B7280"/>
+                        </svg>
+                        <input type="search" placeholder="Search services you want" value="" class="outline-none text-soap-stone placeholder:text-gulf-blue text-base pleading-6  placeholder:leading-6 w-full"> 
+                    </div>
                 </form>
+            </div>
+            <div class="flex gap-3 order-3 items-center">
+                <button type="button" class="px-9 text-soap-stone text-base font-medium leading-3 hover:bg-dark-cerulean hover:text-white rounded-lg h-[45px] w-[116px]">Login</button>
+                <button type="button" class="px-[29px] rounded-lg text-white text-base font-medium leading-3 bg-dark-cerulean hover:bg-white hover:text-soap-stone h-[45px] w-[116px]">Sign up</button>
             </div>
         </nav>
     </header>
+
+
+    <section class="xl:pb-20 lg:pb-16 md:pb-10 sm:pb-8 pb-5">
+        <div class='container'>
+            <div class="grid grid-cols-12 gap-[23px]">
+                <div class="col-span-12 xl:col-span-9">
+                    <div class="w-full">
+                        <div class="owl-carousel owl-theme">
+                            <div class="item">
+                                <picture>
+                                    <source type="image/webp" src="images/burger-banner.webp">
+                                    <source type="image/png" src="images/burger-banner.png">
+                                    <img src="images/burger-banner.png" class="img-fluid w-full rounded-[10px]" alt="burger-banner" width="849" height="440" loading="lazy" >
+                                </picture>
+                            </div>
+                            <div class="item">
+                                <picture>
+                                    <source type="image/webp" src="images/burger-banner.webp">
+                                    <source type="image/png" src="images/burger-banner.png">
+                                    <img src="images/burger-banner.png" class="img-fluid w-full rounded-[10px]" alt="burger-banner" width="849" height="440" loading="lazy" >
+                                </picture>
+                            </div>
+                            <div class="item">
+                                <picture>
+                                    <source type="image/webp" src="images/burger-banner.webp">
+                                    <source type="image/png" src="images/burger-banner.png">
+                                    <img src="images/burger-banner.png" class="img-fluid w-full rounded-[10px]" alt="burger-banner" width="849" height="440" loading="lazy" >
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 xl:col-span-3 w-full">
+                    <div class="pt-[22px] ps-[22px] bg-ghost-white rounded-[10px]">
+                        <div class="flex items-center gap-[13px] pb-[30px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" viewBox="0 0 16 13" fill="none">
+                                <path d="M4.7334 1H15.0001" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4.7334 6.60022H15.0001" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4.7334 12.2001H15.0001" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M1 1V1.01133" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M1 6.60022V6.61155" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M1 12.2001V12.2114" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <p class="text-soap-stone text-base md:text-lg xl:text-xl font-medium leading-[25px] tracking-[-0.2px]">Categories</p>
+                        </div>
+                        <div  class="flex flex-col gap-5 h-[359px]  overflow-auto">
+                            <div class="flex gap-4">
+                                <picture>
+                                    <source type="image/webp" src="images/poori.webp">
+                                    <source type="image/png" src="images/poori.png">
+                                    <img src="images/poori.png" class="rounded-[5px] img-fluid w-full" alt="bread" width="50" height="50" loading="lazy">
+                                </picture>
+                                <div class="flex flex-col justify-center gap-2.5">
+                                    <h3 class="text-soap-stone text-sm font-semibold leading-[10px]">Bread & doughs</h3>
+                                    <p class="text-gulf-blue text-xs font-normal leading-[9px]">12 Restaurants</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <picture>
+                                    <source type="image/webp" src="images/pasta.webp">
+                                    <source type="image/png" src="images/pasta.png">
+                                    <img src="images/pasta.png" class="rounded-[5px] img-fluid w-full" alt="pasta" width="50" height="50" loading="lazy">
+                                </picture>
+                                <div class="flex flex-col justify-center gap-2.5">
+                                    <h3 class="text-soap-stone text-sm font-semibold leading-[10px]">Pasta & risotto</h3>
+                                    <p class="text-gulf-blue text-xs font-normal leading-[9px]">21 Restaurants</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <picture>
+                                    <source type="image/webp" src="images/vegetable.webp">
+                                    <source type="image/png" src="images/vegetable.png">
+                                    <img src="images/vegetable.png" class="rounded-[5px] img-fluid w-full" alt="vegetable" width="50" height="50" loading="lazy">
+                                </picture>
+                                <div class="flex flex-col justify-center gap-2.5">
+                                    <h3 class="text-soap-stone text-sm font-semibold leading-[10px]">Vegetable sides</h3>
+                                    <p class="text-gulf-blue text-xs font-normal leading-[9px]">05 Restaurants</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <picture>
+                                    <source type="image/webp" src="images/sauces.webp">
+                                    <source type="image/png" src="images/sauces.png">
+                                    <img src="images/sauces.png" class="rounded-[5px] img-fluid w-full" alt="sauces" width="50" height="50" loading="lazy">
+                                </picture>
+                                <div class="flex flex-col justify-center gap-2.5">
+                                    <h3 class="text-soap-stone text-sm font-semibold leading-[10px]">Sauces & condiments</h3>
+                                    <p class="text-gulf-blue text-xs font-normal leading-[9px]">14 Restaurants</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <picture>
+                                    <source type="image/webp" src="images/puddings.webp">
+                                    <source type="image/png" src="images/puddings.png">
+                                    <img src="images/puddings.png" class="rounded-[5px] img-fluid w-full" alt="puddings" width="50" height="50" loading="lazy">
+                                </picture>
+                                <div class="flex flex-col justify-center gap-2.5">
+                                    <h3 class="text-soap-stone text-sm font-semibold leading-[10px]">Puddings & desserts</h3>
+                                    <p class="text-gulf-blue text-xs font-normal leading-[9px]">35 Restaurants</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <picture>
+                                    <source type="image/webp" src="images/puddings.webp">
+                                    <source type="image/png" src="images/puddings.png">
+                                    <img src="images/puddings.png" class="rounded-[5px] img-fluid w-full" alt="puddings" width="50" height="50" loading="lazy">
+                                </picture>
+                                <div class="flex flex-col justify-center gap-2.5">
+                                    <h3 class="text-soap-stone text-sm font-semibold leading-[10px]">Pasta bakes</h3>
+                                    <p class="text-gulf-blue text-xs font-normal leading-[9px]">12 Restaurants</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="xl:pb-20 lg:pb-16 md:pb-10 sm:pb-8 pb-5">
+        <div class="container">
+            <div class="flex justify-between items-center xl:pb-[30px] lg:pb-7 md:pb-6 sm:pb-5 xs:pb-4 pb-3 ">
+                <h2 class="text-soap-stone xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl xs:text-lg text-base font-bold xl:leading-[45px] lg:leading-10 md:leading-9 sm:leading-8 xs:leading-7 leading-6 tracking-[-0.36px]">Top Brands for you</h2>
+                <p><a class="text-dark-cerulean lg:text-xl md:text-base sm:text-sm text-xs font-medium leading-5 tracking-[-0.5px]" href="javascript:void(0)">See all</a></p>
+            </div>
+            <div class="flex justify-between flex-wrap gap-2.5">
+                <div  class="mx-auto">
+                    <picture>
+                        <source type="image/webp" src="images/burger-king.webp">
+                        <source type="image/png" src="images/burger-king.png">
+                        <img src="images/burger-king.png" class="img-fluid mx-auto" alt="burger-king" width="138" height="138" loading="lazy">
+                    </picture>
+                    <p class="pt-5 text-center text-soap-stone text-sm font-semibold leading-[21px]">Burger King</p>
+                    <p class="pt-3 text-center text-gulf-blue text-sm leading-[21px]">Buy 1 Get 1 Free</p>
+                </div>
+                <div  class="mx-auto">
+                    <picture>
+                        <source type="image/webp" src="images/dominos.webp">
+                        <source type="image/png" src="images/dominos.png">
+                        <img src="images/dominos.png" class="img-fluid mx-auto" alt="dominos" width="138" height="138" loading="lazy">
+                    </picture>
+                    <p class="pt-5 text-center text-soap-stone text-sm font-semibold leading-[21px]">Domino’s</p>
+                    <p class="pt-3 text-center text-gulf-blue text-sm leading-[21px]">20% off on Pizza’s</p>
+                </div>
+                <div  class="mx-auto">
+                    <picture>
+                        <source type="image/webp" src="images/subway.webp">
+                        <source type="image/png" src="images/subway.png">
+                        <img src="images/subway.png" class="img-fluid" alt="subway" width="138" height="138" loading="lazy">
+                    </picture>
+                    <p class="pt-5 text-center text-soap-stone text-sm font-semibold leading-[21px]">Subway</p>
+                    <p class="pt-3 text-center text-gulf-blue text-sm leading-[21px]">10% Off on grills</p>
+                </div>
+                <div  class="mx-auto">
+                    <picture>
+                        <source type="image/webp" src="images/kfc-bucket.webp">
+                        <source type="image/png" src="images/kfc-bucket.png">
+                        <img src="images/kfc-bucket.png" class="img-fluid mx-auto" alt="kfc-bucket" width="138" height="138" loading="lazy">
+                    </picture>
+                    <p class="pt-5 text-center text-soap-stone text-sm font-semibold leading-[21px]">KFC</p>
+                    <p class="pt-3 text-center text-gulf-blue text-sm leading-[21px]">Flat 10% Off</p>
+                </div>
+                <div  class="mx-auto">
+                    <picture>
+                        <source type="image/webp" src="images/hakirams.webp">
+                        <source type="image/png" src="images/hakirams.png">
+                        <img src="images/hakirams.png" class="mx-auto img-fluid" alt="Haldirams" width="138" height="138" loading="lazy" >
+                    </picture>
+                    <p class="pt-5 text-center text-soap-stone text-sm font-semibold leading-[21px]">Haldirams</p>
+                    <p class="pt-3 text-center text-gulf-blue text-sm leading-[21px]">30% Off On Snacks items</p>
+                </div>
+                <div  class="mx-auto">
+                    <picture>
+                        <source type="image/webp" src="images/taco-bell.webp">
+                        <source type="image/png" src="images/taco-bell.png">
+                        <img src="images/taco-bell.png" class="img-fluid mx-auto" alt="taco-bell" width="138" height="138" loading="lazy">
+                    </picture>
+                    <p class="pt-5 text-center text-soap-stone text-sm font-semibold leading-[21px]">Taco Bell</p>
+                    <p class="pt-3 text-center text-gulf-blue text-sm leading-[21px]">Buy 1 Get 1 Free</p>
+                </div>
+                <div class="mx-auto">
+                    <picture>
+                        <source type="image/webp" src="images/mc.webp">
+                        <source type="image/png" src="images/mc.png">
+                        <img src="images/mc.png" class="img-fluid" alt="mcdonalds" width="138" height="138" loading="lazy">
+                    </picture>
+                    <p class="pt-5 text-center text-soap-stone text-sm font-semibold leading-[21px]">Mc Donald’s</p>
+                    <p class="pt-3 text-center text-gulf-blue text-sm leading-[21px]">Buy 1 Get 1 Free</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="xl:pb-20 lg:pb-16 md:pb-10 sm:pb-8 pb-5">
+        <div class="container">
+            <div class="grid grid-cols-12 lg:gap-[25px] md:gap-5 sm:gap-4 gap-3">
+                <div class="col-span-8">
+                    <picture>
+                        <source type="image/webp" src="images/mcdonalds.webp">
+                        <source type="image/png" src="images/mcdonalds.png">
+                        <img src="images/mcdonalds.png" class="img-fluid w-full rounded-[10px]" alt="mcdonalds" width="751" height="377" loading="lazy">
+                    </picture>
+                </div>
+                <div class="col-span-4">
+                    <div class="flex flex-col lg:gap-6 md:gap-5 sm:gap-4 gap-3">
+                        <picture>
+                            <source type="image/webp" src="images/pizza.webp">
+                            <source type="image/png" src="images/pizza.png">
+                            <img src="images/pizza.png" class="img-fluid w-full rounded-lg" alt="pizza" width="363" height="177" loading="lazy">
+                        </picture>
+                        <picture>
+                            <source type="image/webp" src="images/kfc.webp">
+                            <source type="image/png" src="images/kfc.png">
+                            <img src="images/kfc.png" class="img-fluid w-full rounded-lg" alt="kfc-chicken" width="363" height="177" loading="lazy">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="xl:pb-[90px] lg:pb-20 md:pb-16 sm:pb-10 pb-5">
+        <div class="container">
+            <div class="flex justify-between items-center xl:pb-[30.55px] lg:pb-9 md:pb-8 sm:pb-7 xs:pb-6 pb-5 ">
+                <h2 class="text-soap-stone xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl xs:text-lg text-base font-bold xl:leading-[45px] lg:leading-10 md:leading-9 sm:leading-8 xs:leading-7 leading-6 tracking-[-0.36px]">Top Restaurants near you</h2>
+                <p><a class="text-dark-cerulean lg:text-xl md:text-base sm:text-sm text-xs font-medium leading-5 tracking-[-0.5px]" href="javascript:void(0)">See all</a></p>
+            </div>
+            <div class="grid grid-cols-12 xl:gap-x-[25.66px] lg:gap-x-6 md:gap-x-5 sm:gap-x-4 gap-x-3 xl:gap-y-8 lg:gap-y-7 md:gap-y-6 sm:gap-y-5 gap-y-4">
+                <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div  class="relative">
+                        <img src="images/Annapoorna.png" class="img-fluid w-full rounded-[5px]" >
+                        <div class="overlay"></div>
+                        <p class="text-[12.787px] text-white font-bold leading-[19.18px] absolute bottom-0 left-0 pb-[6.59px] ps-[6.47px]">Flat 10% OFF</p>
+                    </div>
+                    <div>
+                        <h2  class="text-soap-stone text-sm xl:text-base font-semibold leading-6 pt-[14px]">Annapoorna & Gowrishankar </h2>
+                        <div class="flex gap-2.5 pt-2.5">
+                            <div class="flex px-[4.359px] pt-[0.872px] pb-[0.128px] bg-saddle items-center rounded-[9.089px]">
+                                <p class="font-poppins text-white text-[9.089px] font-semibold">4.0</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                                    <g clip-path="url(#clip0_371_224)">
+                                      <path d="M5.51718 7.48092C5.4068 7.42275 5.27484 7.42269 5.1644 7.48076L3.29317 8.46458C3.01535 8.61065 2.69063 8.37472 2.7437 8.06536L3.10116 5.98149C3.12225 5.85855 3.08145 5.73311 2.99206 5.6461L1.47637 4.17072C1.25132 3.95166 1.37538 3.56962 1.6862 3.52457L3.77718 3.22153C3.90058 3.20365 4.00727 3.12616 4.06245 3.01435L4.99815 1.1184C5.13706 0.836929 5.53842 0.83693 5.67734 1.1184L6.61303 3.01435C6.66821 3.12616 6.77491 3.20365 6.89831 3.22153L8.98928 3.52457C9.3001 3.56962 9.42417 3.95166 9.19912 4.17072L7.68342 5.6461C7.59404 5.73311 7.55323 5.85855 7.57432 5.98149L7.93164 8.06446C7.98473 8.37399 7.65968 8.60993 7.38184 8.46352L5.51718 7.48092Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                      <clipPath id="clip0_371_224">
+                                        <rect width="10.6036" height="9.84615" fill="white" transform="translate(0.0371094 0.0532227)"/>
+                                      </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-catalina-blue text-xs font-medium leading-[18px]">Indian cuisine</p>
+                            </div>
+                        </div>
+                        <div class="pt-2 flex gap-2.5">
+                            <div class="flex items-center gap-[3px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path d="M8.51333 14.5241C11.2562 14.5241 13.4798 12.3005 13.4798 9.55765C13.4798 6.81475 11.2562 4.59119 8.51333 4.59119C5.77043 4.59119 3.54688 6.81475 3.54688 9.55765C3.54688 12.3005 5.77043 14.5241 8.51333 14.5241Z" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.51367 7.42926V9.55774H9.93266" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4.96478 3.17236L3.01367 4.59135" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12.0605 3.17233L14.0117 4.59132" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p class="text-dark-cerulean text-xs font-semibold leading-[17.028px] tracking-[-0.426px]">23 mins</p>
+                            </div>
+                            <div class="flex gap-1 items-center">
+                                <p class="text-gulf-blue font-medium leading-3 tracking-[-0.3px] text-[10px]">6 km</p>
+                                <img src="images/line.png" class="img-fluid rounded-[2.852px]">
+                                <p class="text-gulf-blue font-medium leading-3 tracking-[-0.3px] text-[10px]">Race Course</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div class="relative">
+                        <img src="images/ss.png" class="img-fluid w-full rounded-[5px]">
+                        <div class="overlay"></div>
+                        <p class="text-[12.787px] text-white font-bold leading-[19.18px] absolute bottom-0 left-0 pb-[6.59px] ps-[6.47px]">Flat 10% OFF</p>
+                    </div>
+                    <div>
+                        <h2  class="text-soap-stone text-sm xl:text-base font-semibold leading-6 pt-[14px]">SS Hydrabad Biriyani</h2>
+                        <div class="flex gap-2.5 pt-2.5">
+                            <div class="flex px-[4.359px] pt-[0.872px] pb-[0.128px] bg-saddle items-center rounded-[9.089px]">
+                                <p class="font-poppins text-white text-[9.089px] font-semibold">4.4</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                                    <g clip-path="url(#clip0_371_224)">
+                                      <path d="M5.51718 7.48092C5.4068 7.42275 5.27484 7.42269 5.1644 7.48076L3.29317 8.46458C3.01535 8.61065 2.69063 8.37472 2.7437 8.06536L3.10116 5.98149C3.12225 5.85855 3.08145 5.73311 2.99206 5.6461L1.47637 4.17072C1.25132 3.95166 1.37538 3.56962 1.6862 3.52457L3.77718 3.22153C3.90058 3.20365 4.00727 3.12616 4.06245 3.01435L4.99815 1.1184C5.13706 0.836929 5.53842 0.83693 5.67734 1.1184L6.61303 3.01435C6.66821 3.12616 6.77491 3.20365 6.89831 3.22153L8.98928 3.52457C9.3001 3.56962 9.42417 3.95166 9.19912 4.17072L7.68342 5.6461C7.59404 5.73311 7.55323 5.85855 7.57432 5.98149L7.93164 8.06446C7.98473 8.37399 7.65968 8.60993 7.38184 8.46352L5.51718 7.48092Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                      <clipPath id="clip0_371_224">
+                                        <rect width="10.6036" height="9.84615" fill="white" transform="translate(0.0371094 0.0532227)"/>
+                                      </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-catalina-blue text-xs font-medium leading-[18px]">Multi cuisine Restaurant</p>
+                            </div>
+                        </div>
+                        <div class="pt-2 flex gap-2.5">
+                            <div class="flex items-center gap-[3px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path d="M8.51333 14.5241C11.2562 14.5241 13.4798 12.3005 13.4798 9.55765C13.4798 6.81475 11.2562 4.59119 8.51333 4.59119C5.77043 4.59119 3.54688 6.81475 3.54688 9.55765C3.54688 12.3005 5.77043 14.5241 8.51333 14.5241Z" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.51367 7.42926V9.55774H9.93266" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4.96478 3.17236L3.01367 4.59135" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12.0605 3.17233L14.0117 4.59132" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p class="text-dark-cerulean text-xs font-semibold leading-[17.028px] tracking-[-0.426px]">15 mins</p>
+                            </div>
+                            <div class="flex gap-1 items-center">
+                                <p class="text-gulf-blue font-medium leading-3 tracking-[-0.3px] text-[10px]">4 km</p>
+                                <img src="images/line.png" class="img-fluid rounded-[2.852px]">
+                                <p class="text-gulf-blue font-medium leading-3 tracking-[-0.3px] text-[10px]">Gandhipuram</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div  class="relative">
+                        <img src="images/geetha-canteen.png" class="img-fluid w-full rounded-[5px]">
+                        <div class="overlay"></div>
+                        <p class="text-[12.787px] text-white font-bold leading-[19.18px] absolute bottom-0 left-0 pb-[6.59px] ps-[6.47px]">Flat 10% OFF</p>
+                    </div>
+                    <div>
+                        <h2  class="text-soap-stone text-sm xl:text-base font-semibold leading-6 pt-[14px]">Geetha Canteen</h2>
+                        <div class="flex gap-2.5 pt-2.5">
+                            <div class="flex px-[4.359px] pt-[0.872px] pb-[0.128px] bg-saddle items-center rounded-[9.089px]">
+                                <p class="font-poppins text-white text-[9.089px] font-semibold">3.9</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                                    <g clip-path="url(#clip0_371_224)">
+                                      <path d="M5.51718 7.48092C5.4068 7.42275 5.27484 7.42269 5.1644 7.48076L3.29317 8.46458C3.01535 8.61065 2.69063 8.37472 2.7437 8.06536L3.10116 5.98149C3.12225 5.85855 3.08145 5.73311 2.99206 5.6461L1.47637 4.17072C1.25132 3.95166 1.37538 3.56962 1.6862 3.52457L3.77718 3.22153C3.90058 3.20365 4.00727 3.12616 4.06245 3.01435L4.99815 1.1184C5.13706 0.836929 5.53842 0.83693 5.67734 1.1184L6.61303 3.01435C6.66821 3.12616 6.77491 3.20365 6.89831 3.22153L8.98928 3.52457C9.3001 3.56962 9.42417 3.95166 9.19912 4.17072L7.68342 5.6461C7.59404 5.73311 7.55323 5.85855 7.57432 5.98149L7.93164 8.06446C7.98473 8.37399 7.65968 8.60993 7.38184 8.46352L5.51718 7.48092Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                      <clipPath id="clip0_371_224">
+                                        <rect width="10.6036" height="9.84615" fill="white" transform="translate(0.0371094 0.0532227)"/>
+                                      </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-catalina-blue text-xs font-medium leading-[18px]">South Indian Restaurant</p>
+                            </div>
+                        </div>
+                        <div class="pt-2 flex gap-2.5" >
+                            <div class="flex items-center gap-[3px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path d="M8.51333 14.5241C11.2562 14.5241 13.4798 12.3005 13.4798 9.55765C13.4798 6.81475 11.2562 4.59119 8.51333 4.59119C5.77043 4.59119 3.54688 6.81475 3.54688 9.55765C3.54688 12.3005 5.77043 14.5241 8.51333 14.5241Z" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.51367 7.42926V9.55774H9.93266" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4.96478 3.17236L3.01367 4.59135" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12.0605 3.17233L14.0117 4.59132" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p class="text-dark-cerulean text-xs font-semibold leading-[17.028px] tracking-[-0.426px]">20 mins</p>
+                            </div>
+                            <div class="flex gap-1 items-center">
+                                <p class="text-gulf-blue font-medium leading-3 tracking-[-0.3px] text-[10px]">4 km</p>
+                                <img src="images/line.png" class="img-fluid rounded-[2.852px]">
+                                <p class="text-gulf-blue font-medium leading-3 tracking-[-0.3px] text-[10px]">North Coimbatore</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div  class="relative">
+                        <img src="images/kowloon.png" class="img-fluid w-full rounded-[5px]">
+                        <div class="overlay"></div>
+                        <p class="text-[12.787px] text-white font-bold leading-[19.18px] absolute bottom-0 left-0 pb-[6.59px] ps-[6.47px]">Flat 10% OFF</p>
+                    </div>
+                    <div>
+                        <h2  class="text-soap-stone text-sm xl:text-base font-semibold leading-6 pt-[14px]">Kowloon</h2>
+                        <div class="flex gap-2.5 pt-2.5">
+                            <div class="flex px-[4.359px] pt-[0.872px] pb-[0.128px] bg-saddle items-center rounded-[9.089px]">
+                                <p class="font-poppins text-white text-[9.089px] font-semibold">4.0</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                                    <g clip-path="url(#clip0_371_224)">
+                                      <path d="M5.51718 7.48092C5.4068 7.42275 5.27484 7.42269 5.1644 7.48076L3.29317 8.46458C3.01535 8.61065 2.69063 8.37472 2.7437 8.06536L3.10116 5.98149C3.12225 5.85855 3.08145 5.73311 2.99206 5.6461L1.47637 4.17072C1.25132 3.95166 1.37538 3.56962 1.6862 3.52457L3.77718 3.22153C3.90058 3.20365 4.00727 3.12616 4.06245 3.01435L4.99815 1.1184C5.13706 0.836929 5.53842 0.83693 5.67734 1.1184L6.61303 3.01435C6.66821 3.12616 6.77491 3.20365 6.89831 3.22153L8.98928 3.52457C9.3001 3.56962 9.42417 3.95166 9.19912 4.17072L7.68342 5.6461C7.59404 5.73311 7.55323 5.85855 7.57432 5.98149L7.93164 8.06446C7.98473 8.37399 7.65968 8.60993 7.38184 8.46352L5.51718 7.48092Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                      <clipPath id="clip0_371_224">
+                                        <rect width="10.6036" height="9.84615" fill="white" transform="translate(0.0371094 0.0532227)"/>
+                                      </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-catalina-blue text-xs font-medium leading-[18px]">Chinese Restaurant</p>
+                            </div>
+                        </div>
+                        <div class="pt-2 flex gap-2.5">
+                            <div class="flex items-center gap-[3px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path d="M8.51333 14.5241C11.2562 14.5241 13.4798 12.3005 13.4798 9.55765C13.4798 6.81475 11.2562 4.59119 8.51333 4.59119C5.77043 4.59119 3.54688 6.81475 3.54688 9.55765C3.54688 12.3005 5.77043 14.5241 8.51333 14.5241Z" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.51367 7.42926V9.55774H9.93266" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4.96478 3.17236L3.01367 4.59135" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12.0605 3.17233L14.0117 4.59132" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p class="text-dark-cerulean text-xs font-semibold leading-[17.028px] tracking-[-0.426px]">40 mins</p>
+                            </div>
+                            <div class="flex gap-1 items-center">
+                                <p class="text-gulf-blue font-medium leading-3 tracking-[-0.3px] text-[10px]">6 km</p>
+                                <img src="images/line.png" class="img-fluid rounded-[2.852px]">
+                                <p class="text-gulf-blue font-medium leading-3 tracking-[-0.3px] text-[10px]">Saibaba colony</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div  class="relative">
+                        <img src="images/chinese.png" class="img-fluid w-full rounded-[5px]">
+                        <div class="overlay"></div>
+                        <p class="text-[12.787px] text-white font-bold leading-[19.18px] absolute bottom-0 left-0 pb-[6.59px] ps-[6.47px]">Flat 10% OFF</p>
+                    </div>
+                    <div>
+                        <h2  class="text-soap-stone text-sm xl:text-base font-semibold leading-6 pt-[14px]">Chinese Wok</h2>
+                        <div class="flex gap-2.5 pt-2.5">
+                            <div class="flex px-[4.359px] pt-[0.872px] pb-[0.128px] bg-saddle items-center rounded-[9.089px]">
+                                <p class="font-poppins text-white text-[9.089px] font-semibold">4.0</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                                    <g clip-path="url(#clip0_371_224)">
+                                      <path d="M5.51718 7.48092C5.4068 7.42275 5.27484 7.42269 5.1644 7.48076L3.29317 8.46458C3.01535 8.61065 2.69063 8.37472 2.7437 8.06536L3.10116 5.98149C3.12225 5.85855 3.08145 5.73311 2.99206 5.6461L1.47637 4.17072C1.25132 3.95166 1.37538 3.56962 1.6862 3.52457L3.77718 3.22153C3.90058 3.20365 4.00727 3.12616 4.06245 3.01435L4.99815 1.1184C5.13706 0.836929 5.53842 0.83693 5.67734 1.1184L6.61303 3.01435C6.66821 3.12616 6.77491 3.20365 6.89831 3.22153L8.98928 3.52457C9.3001 3.56962 9.42417 3.95166 9.19912 4.17072L7.68342 5.6461C7.59404 5.73311 7.55323 5.85855 7.57432 5.98149L7.93164 8.06446C7.98473 8.37399 7.65968 8.60993 7.38184 8.46352L5.51718 7.48092Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                      <clipPath id="clip0_371_224">
+                                        <rect width="10.6036" height="9.84615" fill="white" transform="translate(0.0371094 0.0532227)"/>
+                                      </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-catalina-blue text-xs font-medium leading-[18px]">Chinese, Asian, Tibetan, Desserts</p>
+                            </div>
+                        </div>
+                        <div class="pt-2 flex gap-2.5">
+                            <div class="flex items-center gap-[3px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path d="M8.51333 14.5241C11.2562 14.5241 13.4798 12.3005 13.4798 9.55765C13.4798 6.81475 11.2562 4.59119 8.51333 4.59119C5.77043 4.59119 3.54688 6.81475 3.54688 9.55765C3.54688 12.3005 5.77043 14.5241 8.51333 14.5241Z" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.51367 7.42926V9.55774H9.93266" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4.96478 3.17236L3.01367 4.59135" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12.0605 3.17233L14.0117 4.59132" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p class="text-dark-cerulean text-xs font-semibold leading-[17.028px] tracking-[-0.426px]">53 mins</p>
+                            </div>
+                            <div class="flex gap-1 items-center">
+                                <p class="text-gulf-blue font-medium leading-3 tracking-[-0.3px] text-[10px]">4 km</p>
+                                <img src="images/line.png" class="img-fluid rounded-[2.852px]">
+                                <p class="text-gulf-blue font-medium leading-3 tracking-[-0.3px] text-[10px]">R.S. Puram</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div  class="relative">
+                        <img src="images/pizza-hut.png" class="img-fluid w-full rounded-[5px]">
+                        <div class="overlay"></div>
+                        <p class="text-[12.787px] text-white font-bold leading-[19.18px] absolute bottom-0 left-0 pb-[6.59px] ps-[6.47px]">Free Delivery</p>
+                    </div>
+                    <div>
+                        <h2  class="text-soap-stone text-sm xl:text-base font-semibold leading-6 pt-[14px]">Pizza Hut</h2>
+                        <div class="flex gap-2.5 pt-2.5">
+                            <div class="flex px-[4.359px] pt-[0.872px] pb-[0.128px] bg-saddle items-center rounded-[9.089px]">
+                                <p class="font-poppins text-white text-[9.089px] font-semibold">4.0</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                                    <g clip-path="url(#clip0_371_224)">
+                                      <path d="M5.51718 7.48092C5.4068 7.42275 5.27484 7.42269 5.1644 7.48076L3.29317 8.46458C3.01535 8.61065 2.69063 8.37472 2.7437 8.06536L3.10116 5.98149C3.12225 5.85855 3.08145 5.73311 2.99206 5.6461L1.47637 4.17072C1.25132 3.95166 1.37538 3.56962 1.6862 3.52457L3.77718 3.22153C3.90058 3.20365 4.00727 3.12616 4.06245 3.01435L4.99815 1.1184C5.13706 0.836929 5.53842 0.83693 5.67734 1.1184L6.61303 3.01435C6.66821 3.12616 6.77491 3.20365 6.89831 3.22153L8.98928 3.52457C9.3001 3.56962 9.42417 3.95166 9.19912 4.17072L7.68342 5.6461C7.59404 5.73311 7.55323 5.85855 7.57432 5.98149L7.93164 8.06446C7.98473 8.37399 7.65968 8.60993 7.38184 8.46352L5.51718 7.48092Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                      <clipPath id="clip0_371_224">
+                                        <rect width="10.6036" height="9.84615" fill="white" transform="translate(0.0371094 0.0532227)"/>
+                                      </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-catalina-blue text-xs font-medium leading-[18px]">Pizzas</p>
+                            </div>
+                        </div>
+                        <div class="pt-2 flex gap-2.5">
+                            <div class="flex items-center gap-[3px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path d="M8.51333 14.5241C11.2562 14.5241 13.4798 12.3005 13.4798 9.55765C13.4798 6.81475 11.2562 4.59119 8.51333 4.59119C5.77043 4.59119 3.54688 6.81475 3.54688 9.55765C3.54688 12.3005 5.77043 14.5241 8.51333 14.5241Z" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.51367 7.42926V9.55774H9.93266" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4.96478 3.17236L3.01367 4.59135" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12.0605 3.17233L14.0117 4.59132" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p class="text-dark-cerulean text-xs font-semibold leading-[17.028px] tracking-[-0.426px]">23 mins</p>
+                            </div>
+                            <div class="flex gap-1 items-center">
+                                <p class="text-gulf-blue font-medium leading-3 tracking-[-0.3px] text-[10px]">6 km</p>
+                                <img src="images/line.png" class="img-fluid rounded-[2.852px]">
+                                <p class="text-gulf-blue font-medium leading-3 tracking-[-0.3px] text-[10px]">R.S. Puram</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div  class="relative">
+                        <img src="images/barbeque.png" class="img-fluid w-full rounded-[5px]">
+                        <div class="overlay"></div>
+                        <p class="text-[12.787px] text-white font-bold leading-[19.18px] absolute bottom-0 left-0 pb-[6.59px] ps-[6.47px]">10% OFF on Orders up to ₹500</p>
+                    </div>
+                    <div>
+                        <h2  class="text-soap-stone text-sm xl:text-base font-semibold leading-6 pt-[14px]">UBQ by Barbeque Nation</h2>
+                        <div class="flex gap-2.5 pt-2.5">
+                            <div class="flex px-[4.359px] pt-[0.872px] pb-[0.128px] bg-saddle items-center rounded-[9.089px]">
+                                <p class="font-poppins text-white text-[9.089px] font-semibold">4.0</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                                    <g clip-path="url(#clip0_371_224)">
+                                      <path d="M5.51718 7.48092C5.4068 7.42275 5.27484 7.42269 5.1644 7.48076L3.29317 8.46458C3.01535 8.61065 2.69063 8.37472 2.7437 8.06536L3.10116 5.98149C3.12225 5.85855 3.08145 5.73311 2.99206 5.6461L1.47637 4.17072C1.25132 3.95166 1.37538 3.56962 1.6862 3.52457L3.77718 3.22153C3.90058 3.20365 4.00727 3.12616 4.06245 3.01435L4.99815 1.1184C5.13706 0.836929 5.53842 0.83693 5.67734 1.1184L6.61303 3.01435C6.66821 3.12616 6.77491 3.20365 6.89831 3.22153L8.98928 3.52457C9.3001 3.56962 9.42417 3.95166 9.19912 4.17072L7.68342 5.6461C7.59404 5.73311 7.55323 5.85855 7.57432 5.98149L7.93164 8.06446C7.98473 8.37399 7.65968 8.60993 7.38184 8.46352L5.51718 7.48092Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                      <clipPath id="clip0_371_224">
+                                        <rect width="10.6036" height="9.84615" fill="white" transform="translate(0.0371094 0.0532227)"/>
+                                      </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-catalina-blue text-xs font-medium leading-[18px]">North Indian, Barbecue, Biryani</p>
+                            </div>
+                        </div>
+                        <div class="pt-2 flex gap-2.5">
+                            <div class="flex items-center gap-[3px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path d="M8.51333 14.5241C11.2562 14.5241 13.4798 12.3005 13.4798 9.55765C13.4798 6.81475 11.2562 4.59119 8.51333 4.59119C5.77043 4.59119 3.54688 6.81475 3.54688 9.55765C3.54688 12.3005 5.77043 14.5241 8.51333 14.5241Z" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.51367 7.42926V9.55774H9.93266" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4.96478 3.17236L3.01367 4.59135" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12.0605 3.17233L14.0117 4.59132" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p class="text-dark-cerulean text-xs font-semibold leading-[17.028px] tracking-[-0.426px]">50 mins</p>
+                            </div>
+                            <div class="flex gap-1 items-center">
+                                <p class="text-gulf-blue font-medium leading-3 tracking-[-0.3px] text-[10px]">6 km</p>
+                                <img src="images/line.png" class="img-fluid rounded-[2.852px]">
+                                <p class="text-gulf-blue font-medium leading-3 tracking-[-0.3px] text-[10px]">Peelamedu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div  class="relative">
+                        <img src="images/HMR.png" class="img-fluid w-full rounded-[5px]">
+                        <div class="overlay"></div>
+                        <p class="text-[12.787px] text-white font-bold leading-[19.18px] absolute bottom-0 left-0 pb-[6.59px] ps-[6.47px]">Flat 10% OFF</p>
+                    </div>
+                    <div>
+                        <h2  class="text-soap-stone text-sm xl:text-base font-semibold leading-6 pt-[14px]">HMR - Biriyani Hut</h2>
+                        <div class="flex gap-2.5 pt-2.5">
+                            <div class="flex px-[4.359px] pt-[0.872px] pb-[0.128px] bg-saddle items-center rounded-[9.089px]">
+                                <p class="font-poppins text-white text-[9.089px] font-semibold">4.0</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                                    <g clip-path="url(#clip0_371_224)">
+                                      <path d="M5.51718 7.48092C5.4068 7.42275 5.27484 7.42269 5.1644 7.48076L3.29317 8.46458C3.01535 8.61065 2.69063 8.37472 2.7437 8.06536L3.10116 5.98149C3.12225 5.85855 3.08145 5.73311 2.99206 5.6461L1.47637 4.17072C1.25132 3.95166 1.37538 3.56962 1.6862 3.52457L3.77718 3.22153C3.90058 3.20365 4.00727 3.12616 4.06245 3.01435L4.99815 1.1184C5.13706 0.836929 5.53842 0.83693 5.67734 1.1184L6.61303 3.01435C6.66821 3.12616 6.77491 3.20365 6.89831 3.22153L8.98928 3.52457C9.3001 3.56962 9.42417 3.95166 9.19912 4.17072L7.68342 5.6461C7.59404 5.73311 7.55323 5.85855 7.57432 5.98149L7.93164 8.06446C7.98473 8.37399 7.65968 8.60993 7.38184 8.46352L5.51718 7.48092Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                      <clipPath id="clip0_371_224">
+                                        <rect width="10.6036" height="9.84615" fill="white" transform="translate(0.0371094 0.0532227)"/>
+                                      </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-catalina-blue text-xs font-medium leading-[18px]">Biryani, Indian</p>
+                            </div>
+                        </div>
+                        <div class="pt-2 flex gap-2.5">
+                            <div class="flex items-center gap-[3px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path d="M8.51333 14.5241C11.2562 14.5241 13.4798 12.3005 13.4798 9.55765C13.4798 6.81475 11.2562 4.59119 8.51333 4.59119C5.77043 4.59119 3.54688 6.81475 3.54688 9.55765C3.54688 12.3005 5.77043 14.5241 8.51333 14.5241Z" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.51367 7.42926V9.55774H9.93266" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4.96478 3.17236L3.01367 4.59135" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12.0605 3.17233L14.0117 4.59132" stroke="#008352" stroke-width="1.41899" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p class="text-dark-cerulean text-xs font-semibold leading-[17.028px] tracking-[-0.426px]">25 mins</p>
+                            </div>
+                            <div class="flex gap-1 items-center">
+                                <p class="text-gulf-blue font-medium leading-3 tracking-[-0.3px] text-[10px]">8 km</p>
+                                <img src="images/line.png" class="img-fluid rounded-[2.852px]">
+                                <p class="text-gulf-blue font-medium leading-3 tracking-[-0.3px] text-[10px]">Ramanathapuram</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>      
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <footer class="bg-soap-stone py-3 md:py-4 lg:py-5 text-center">
+        <div class="container">
+            <p class="text-white lg:text-sm xl:text-base sm:text-sm text-xs">&copy; Eatzilla private Limited</p>
+        </div>
+    </footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+    
+    <script>  
+        $(document).ready(function(){
+          $('.owl-carousel').owlCarousel({
+            loop:true,
+            autoplay: true,
+            margin:24,
+            nav:false,
+            dots:false,
+            responsive:{
+              0:{
+                items:1
+              },           
+            }
+          })
+        })  
+    </script>
 
 </body>
 </html>

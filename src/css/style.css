@@ -9,7 +9,7 @@
 }
 select{
     appearance: none;
-    background: url(../images/drop.png) no-repeat 90% 50%;
+    background: url(../images/drop.png) no-repeat 96% 50%;
     
 }
 select:focus-visible{

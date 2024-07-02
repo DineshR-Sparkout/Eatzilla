@@ -20,7 +20,7 @@ module.exports = {
           xl:'1140px',
           '2xl':'1140px'
         },
-        padding:'15px',
+        padding:'1rem',
       },
       colors:{
         'midnight':'#1F2A37',

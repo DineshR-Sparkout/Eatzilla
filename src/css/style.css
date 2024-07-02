@@ -35,4 +35,16 @@ input[type="search"]::-webkit-search-results-decoration {
   width: 100%;
   background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0.00) 49.4%);
   border-radius: 5px;
-}   
+} 
+.navbar{
+  display: flex;
+}
+.overflow-auto{
+  scrollbar-width: thin;
+}
+
+@media(max-width:1024px){
+  .navbar{
+    display: none;
+}
+}
